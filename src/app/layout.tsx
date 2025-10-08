@@ -1,20 +1,13 @@
 import Footer from "@/app/_components/footer";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import { BLOG_META } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeSwitcher } from "./_components/theme-switcher";
 
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
-  openGraph: {
-    images: [HOME_OG_IMAGE_URL],
-  },
-};
+export const metadata: Metadata = BLOG_META;
 
 export default function RootLayout({
   children,
@@ -59,8 +52,8 @@ export default function RootLayout({
       <body
         className={inter.className + " dark:bg-slate-900 dark:text-slate-400"}
       >
-        <ThemeSwitcher />
-        <div className="min-h-screen">{children}</div>
+        {/* <ThemeSwitcher /> */}
+        <div className="min-h-screen max-w-3xl mx-auto">{children}</div>
         <Footer />
       </body>
     </html>
