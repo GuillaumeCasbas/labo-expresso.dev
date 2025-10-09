@@ -20,5 +20,4 @@ export const AUTHOR = {
   ]
 };
 
-// TODO: set correct value here
-export const HOME_OG_IMAGE_URL = "/assets";
+export const HOME_OG_IMAGE_URL = "/assets/ogimage.png";

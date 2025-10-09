@@ -1,9 +1,5 @@
 # Todos
 
-## OG Images ?
-
-TODO: first version: the same image for all the posts / site
-
 ## chore: generate the favicons
 
 TODO: Create the differents favicons (see example [official github repo](https://github.com/vercel/next.js/tree/canary/examples/blog-starter))
