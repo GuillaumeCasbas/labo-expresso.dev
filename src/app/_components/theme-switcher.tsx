@@ -68,9 +68,9 @@ const Switch = () => {
     // store global functions to local variables to avoid any interference
     updateDOM = window.updateDOM;
     /** Sync the tabs */
-    addEventListener("storage", (e: StorageEvent): void => {
-      e.key === STORAGE_KEY && setMode(e.newValue as ColorSchemePreference);
-    });
+    // addEventListener("storage", (e: StorageEvent): void => {
+    //   e.key === STORAGE_KEY && setMode(e.newValue as ColorSchemePreference);
+    // });
   }, []);
 
   useEffect(() => {
@@ -92,13 +92,13 @@ const Switch = () => {
   );
 };
 
-const Script = memo(() => (
-  <script
-    dangerouslySetInnerHTML={{
-      __html: `(${NoFOUCScript.toString()})('${STORAGE_KEY}')`,
-    }}
-  />
-));
+// const Script = memo(() => (
+//   <script
+//     dangerouslySetInnerHTML={{
+//       __html: `(${NoFOUCScript.toString()})('${STORAGE_KEY}')`,
+//     }}
+//   />
+// ));
 
 /**
  * This component wich applies classes and transitions.
@@ -106,7 +106,7 @@ const Script = memo(() => (
 export const ThemeSwitcher = () => {
   return (
     <>
-      <Script />
+      {/* <Script /> */}
       <Switch />
     </>
   );
