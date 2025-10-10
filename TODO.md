@@ -1,9 +1,5 @@
 # Todos
 
-## chore: generate the favicons
-
-TODO: Create the differents favicons (see example [official github repo](https://github.com/vercel/next.js/tree/canary/examples/blog-starter))
-
 ## chore: static export config
 
 TODO: Setup the static deployment configuration
