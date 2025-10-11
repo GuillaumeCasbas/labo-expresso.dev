@@ -1,8 +1,8 @@
 .switch {
   all: unset;
   position: absolute;
-  right: 20px;
-  top: 70px;
+  right: 10px;
+  top: 10px;
   display: inline-block;
   color: currentColor;
   border-radius: 50%;
@@ -12,6 +12,13 @@
   height: var(--size);
   width: var(--size);
   transition: all 0.3s ease-in-out 0s !important;
+}
+
+@media screen and (min-width: 600px) {
+  .switch {
+    right: 30px;
+    top: 30px;
+  }
 }
 
 [data-mode="system"] .switch::after {

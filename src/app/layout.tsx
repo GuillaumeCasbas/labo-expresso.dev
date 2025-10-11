@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
+import { ThemeSwitcher } from "./_components/theme-switcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,9 +51,9 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body
-        className={inter.className + " dark:bg-slate-900 dark:text-slate-400"}
+        className={inter.className + " dark:bg-slate-900 text-slate-800 dark:text-slate-400"}
       >
-        {/* <ThemeSwitcher /> */}
+        <ThemeSwitcher />
         <div className="min-h-screen max-w-3xl mx-auto">{children}</div>
         <Footer />
       </body>

@@ -9,7 +9,7 @@ declare global {
 
 type ColorSchemePreference = "system" | "dark" | "light";
 
-const STORAGE_KEY = "nextjs-blog-starter-theme";
+const STORAGE_KEY = "labo-expresso.dev";
 const modes: ColorSchemePreference[] = ["system", "dark", "light"];
 
 /** to reuse updateDOM function defined inside injected script */
@@ -68,9 +68,11 @@ const Switch = () => {
     // store global functions to local variables to avoid any interference
     updateDOM = window.updateDOM;
     /** Sync the tabs */
-    // addEventListener("storage", (e: StorageEvent): void => {
-    //   e.key === STORAGE_KEY && setMode(e.newValue as ColorSchemePreference);
-    // });
+    addEventListener("storage", (e: StorageEvent): void => {
+      if (e.key === STORAGE_KEY) {
+        setMode(e.newValue as ColorSchemePreference);
+      }
+    });
   }, []);
 
   useEffect(() => {
@@ -92,13 +94,13 @@ const Switch = () => {
   );
 };
 
-// const Script = memo(() => (
-//   <script
-//     dangerouslySetInnerHTML={{
-//       __html: `(${NoFOUCScript.toString()})('${STORAGE_KEY}')`,
-//     }}
-//   />
-// ));
+const Script = () => (
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `(${NoFOUCScript.toString()})('${STORAGE_KEY}')`,
+    }}
+  />
+);
 
 /**
  * This component wich applies classes and transitions.
@@ -106,7 +108,7 @@ const Switch = () => {
 export const ThemeSwitcher = () => {
   return (
     <>
-      {/* <Script /> */}
+      <Script />
       <Switch />
     </>
   );

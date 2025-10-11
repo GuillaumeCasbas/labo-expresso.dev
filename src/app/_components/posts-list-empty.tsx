@@ -1,7 +1,7 @@
 export function EmptyPostList() {
   return (
     <div
-      className="border rounded p-6 border-cafe shadow-md bg-linear-to-r from-slate-800 to-sky-900 mt-20"
+      className="border rounded p-6 border-cafe shadow-md bg-linear-to-r from-slate-100 dark:from-slate-800 to-slate-200 dark:to-sky-900 mt-20"
       role="alert"
     >
       <h2 className="text-3xl md:text-4xl font-bold tracking-tighter leading-tight mb-4 text-cafe">
