@@ -4,7 +4,7 @@ type Props = {
 
 export function PostBody({ content }: Props) {
   return (
-    <div className="mx-auto text-base/7">
+    <div className="markdown">
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
