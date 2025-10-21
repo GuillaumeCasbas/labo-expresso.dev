@@ -15,6 +15,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const statScript = process?.env?.UMAMI_TRACKER_ID ? (
+    <script defer src="https://cloud.umami.is/script.js" data-website-id={process.env.UMAMI_TRACKER_ID}></script>
+  ) : null;
   return (
     <html lang="fr">
       <head>
@@ -49,6 +52,7 @@ export default function RootLayout({
         />
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+        {statScript}
       </head>
       <body
         className={inter.className + " dark:bg-slate-900 text-slate-800 dark:text-slate-400"}
